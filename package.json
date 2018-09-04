@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://waseemmaya.github.io/react-assignment-4",
-
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
