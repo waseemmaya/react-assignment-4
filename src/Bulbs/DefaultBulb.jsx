@@ -15,19 +15,17 @@ class DefaultBulb extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            bulb: false,
-            enableButton: false,
-            torde: false
+            bulb : false,
+            breakBulb: false
         }
     }
     render() {
-        const { bulb, enableButton, torde } = this.state;
+        const { bulb, breakBulb,  } = this.state;
         return (
             <div className="container">
-                {!bulb && !enableButton && < BulbOff turnOn={this.turnOn} />}
-                {bulb && !enableButton && < BulbOn turnOff={this.turnOff} />}
-                {!bulb && enableButton && <div>< BulbOff /> <button className="btn btn-warning btn-lg" onClick={this.breakBulb}>Break</button></div>}
-                {torde && bulb && enableButton && < BulbBroken turnOn={this.turnOn} />}
+                {!bulb && !breakBulb && < BulbOff turnOn={this.turnOn} turnOff={this.turnOff} BulbBroken={this.BulbBroken} />}
+                {bulb && !breakBulb && < BulbOn turnOn={this.turnOn} turnOff={this.turnOff} BulbBroken={this.BulbBroken} />}
+                {breakBulb && < BulbBroken BulbBroken={this.BulbBroken} turnOn={this.turnOn} turnOff={this.turnOff} />}
             </div>
         );
     }
@@ -35,24 +33,24 @@ class DefaultBulb extends Component {
     turnOn = () => {
         this.setState({
             bulb: true,
-            torde: false,
-            enableButton: false
+            breakBulb: false
         })
     }
 
     turnOff = () => {
         this.setState({
             bulb: false,
-            enableButton: true
+            breakBulb: false
         })
     }
 
-    breakBulb = () => {
+    BulbBroken = () => {
         this.setState({
-            bulb: true,
-            enableButton: true,
-            torde: true
+            bulb : false,
+            breakBulb: true,
+            tordo: true
         })
+        
     }
 
 

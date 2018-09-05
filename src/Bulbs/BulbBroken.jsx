@@ -8,14 +8,22 @@ class BulbBroken extends Component {
     state = {  }
     render() { 
         return (
-            <div>
+            <div className="container">
             <div>
                <img src={brokenImg} className="img" alt="onBulb" />
             </div>
-            <div>
-                <button onClick={this.props.turnOn}>
+            <div className="text-center">
+            <button className="btn btn-success btn-lg mr-3" onClick={this.props.turnOn}>
                     Turn On
                 </button>
+                <button className="btn btn-info btn-lg mr-3" onClick={this.props.turnOff}>
+                    Turn Off
+                </button>
+                <div className="text-center">
+            <button className="btn btn-warning btn-lg mt-3" onClick={this.props.BulbBroken}>
+                    Break Bulb
+                </button>
+            </div>
             </div>
             </div>
           );
